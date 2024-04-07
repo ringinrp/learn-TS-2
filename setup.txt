@@ -1,0 +1,15 @@
+install jest untuk unit test
+npm i --save-dev jest @types/jest
+
+instal babel agar js nya support js module
+npm i --save-dev babel-jest @babel/preset-env
+setelah itu menuju https://babeljs.io/setup#installation  Test framework -> jest. pada usage copy script dan jest, timpa pada package.json
+
+buat file babel.config.json
+masukkan :
+ {
+  "presets": ["@babel/preset-env"]
+}
+
+install typescript
+npm i --save-dev typescript
