@@ -1,2 +1,13 @@
 setup typescript
 npx tsc --init
+
+ubah module pada tsconfig dari commonjs menjadi ES6
+
+menuju https://jestjs.io/docs/getting-started kemudian install npm install --save-dev @babel/preset-typescript
+
+kemudian tambahkan '@babel/preset-typescript', pada babel.config
+
+kemudian install npm install --save-dev ts-jest, npm install --save-dev @jest/globals, npm install --save-dev @types/jest
+
+untuk menjalankan test maka npm test
+untuk menjalankan kompilasi maka npx tsc

@@ -12,4 +12,6 @@ masukkan :
 }
 
 install typescript
-npm i --save-dev typescript
+npm i --save-dev typescript 
+
+"outDir": "dist/",
