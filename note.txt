@@ -11,3 +11,5 @@ kemudian install npm install --save-dev ts-jest, npm install --save-dev @jest/gl
 
 untuk menjalankan test maka npm test
 untuk menjalankan kompilasi maka npx tsc
+
+tambahkan "include": ["src/**/*"] dan "exclude": ["test/**/*"]
