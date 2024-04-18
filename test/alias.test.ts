@@ -5,7 +5,8 @@ describe('Alias', () => {
         
         const category: Category = {
             id : "1",
-            name: "handphone"
+            name: "handphone",
+            description: "Contoh"
         }
 
         const product: Product = {
