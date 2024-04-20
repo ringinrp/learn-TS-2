@@ -45,18 +45,37 @@ describe('Function', () => {
     expect(sayHello("Ringin", "Restu")).toBe("Hello Ringin Restu");
   });
 
-it('shoul support function overloading', () => {
-    function callMe(value: number): number;
-    function callMe(value: string): string;
-    function callMe(value: any): any{
-        if (typeof value === "string") {
-            return value.toUpperCase();
-        } else {
-            return value * 10;
+    it('shoul support function overloading', () => {
+        function callMe(value: number): number;
+        function callMe(value: string): string;
+        function callMe(value: any): any{
+            if (typeof value === "string") {
+                return value.toUpperCase();
+            } else {
+                return value * 10;
+            }
         }
-    }
 
-    expect(callMe(10)).toBe(100);
-    expect(callMe("Ringin")).toBe("RINGIN");
+        expect(callMe(10)).toBe(100);
+        expect(callMe("Ringin")).toBe("RINGIN");
+    });
+
+    it('should function as parameter', () => {
+        
+        function sayHello(name: string, filter: (name: string)=>string): string{
+            return `Hello ${filter(name)}`
+        }
+
+        function toUpper(name: string): string{
+            return name.toUpperCase();
+        }
+
+        expect(sayHello("Ringin", toUpper)).toBe("Hello RINGIN");
+
+        expect(sayHello("Ringin", function(name: string): string{
+            return name.toUpperCase();
+        })).toBe("Hello RINGIN");
+
+        expect(sayHello("Ringin", (name: string): string => name.toUpperCase())).toBe("Hello RINGIN");
+    });
 });
-})
